@@ -105,7 +105,7 @@ pop.dens <- rand.surface(n.row = n.row, n.col = n.col) * 100 # population densit
 avg.temp <- rand.surface(n.row = n.row, n.col = n.col) * 40 # average daily temperature in degrees C
 soil.sal <- rand.surface(n.row = n.row, n.col = n.col) * 5 # soil salinity in deciSiemens / meter
 
-# we'll define suitability to habitation as the following linear combination of our 
+# we'll define site suitability as the following linear combination of our 
 # environmental variables. normally this is the very thing we're trying to find when 
 # we make a predictive model, so we wouldn't know it from the start. we'll pretend we don't 
 # already know it and try to make our predictive models figure it out
@@ -182,7 +182,7 @@ plot(prec.rstr, col = pal(n.cell), asp = 1, main = "Annual\n Precipitation (cm)"
 plot(popd.rstr, col = pal(n.cell), asp = 1, main = "Population Density")
 plot(temp.rstr, col = pal(n.cell), asp = 1, main = "Average Daily Temperature\n (degrees C)")
 plot(soil.rstr, col = pal(n.cell), asp = 1, main = "Soil Salinity (dS/m)")
-plot(suit.rstr, col = pal(n.cell), asp = 1, main = "Habitation Suitability")
+plot(suit.rstr, col = pal(n.cell), asp = 1, main = "Site Suitability")
 
 par(mfrow = c(1,1)) # go back to just plotting one thing in the plot window
 
@@ -346,7 +346,7 @@ proj4string(pdct.rstr) <- p4s
 
 # plot the predicted suitability surface
 par(mfrow = c(1,1))
-plot(pdct.rstr, col = pal(n.cell), main = "Predicted Habitation\n Suitability")
+plot(pdct.rstr, col = pal(n.cell), main = "Predicted Site\n Suitability")
 
 # which cells from the raster we just plotted meet or exceed our model's suitability threshold?
 # regions where black dots get plotted are where you should look for sites
